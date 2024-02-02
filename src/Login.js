@@ -37,6 +37,7 @@ export default function Login () {
                     auth,
                     email,
                     password
+                    
                 );
                 const user = userCredential.user;
                 

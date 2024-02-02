@@ -25,6 +25,7 @@ export default function ForgetPassword() {
             e.preventDefault();
         }
 
+        
         else {
             sendPasswordResetEmail(auth, email)
                 .then(() => {

@@ -8,12 +8,6 @@ import {getStorage} from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  // apiKey: "AIzaSyAtFE5-R73RlJI0FuLnAlo-ON9_7T5DSCQ",
-  // authDomain: "chequeapp-ea7f5.firebaseapp.com",
-  // projectId: "chequeapp-ea7f5",
-  // storageBucket: "chequeapp-ea7f5.appspot.com",
-  // messagingSenderId: "413782922435",
-  // appId: "1:413782922435:web:438408a9edcf5d33617e76"
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,

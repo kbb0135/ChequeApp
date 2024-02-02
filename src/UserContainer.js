@@ -32,4 +32,6 @@ const UserContainer = ({ item }) => {
         </div>
     )
 }
+
 export default UserContainer;
+

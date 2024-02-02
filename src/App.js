@@ -10,7 +10,6 @@ import DisplayUser from './DisplayUser';
 import { useEffect, useState } from 'react';
 import { auth } from './firebase';
 import ForgetPassword from './ForgetPassword';
-
 function App() {
   const [currentUser, setCurrentUser] = useState("")
   useEffect(() => {

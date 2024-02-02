@@ -18,7 +18,9 @@ const Idcard = ({ firstName, lastName, phone, email, imageUrl, status }) => {
               <h4><Badge bg="success">{status}</Badge></h4>
             </>
           ) : (
+
             <>
+            
               <div className="form-content">
                 <h4><Badge bg="danger">{status}</Badge></h4>
               </div>
