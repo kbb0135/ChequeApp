@@ -1,0 +1,52 @@
+.search-container, .button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: auto;
+  }
+.search {
+    width:50%;
+    height:40px;
+}
+.button-container {
+    margin-top:20px;
+}
+.header {
+    text-align: center;
+    padding-top: 240px;
+    
+}
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.result-container p {
+    font-size: 18px;
+    color: green;
+}
+.result-container p:hover {
+    cursor: pointer;
+    color: red;
+}
+.p-container {
+    font-size: 18px;
+    color: green;
+}
+.p-container:hover {
+    cursor: pointer;
+    color: red;
+}
+.img-search {
+    padding-top: 20px;
+    display: block;
+    margin: 0 auto;
+    width:400px;
+    height:400px;
+}

@@ -1,0 +1,60 @@
+.login-main {
+    background-image: url("https://t4.ftcdn.net/jpg/02/68/80/71/240_F_268807166_oPVMMlJcxy4OjBDkl9JPxqfJeMC98yNm.jpg")
+}
+.auth-page {
+    width: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(58, 20, 20);
+    padding: 2rem 0;
+    height:100vh;
+    
+  }
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    width: min(30rem, 90%);
+    padding: 2rem;
+    gap: 2rem;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6e6;
+    position: relative;
+  }
+  
+  .auth-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
+  
+  a {
+    color: red
+  }
+  a:active {
+    color: black;
+  }
+  .form-name {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+  }
+  .email{
+    margin-bottom: 10px;
+    height:35px;
+  }
+  .password {
+    height:35px;
+    margin-bottom:40px;
+  }
+  .forgetPassword {
+    text-decoration: none;
+  }
+  .forgetPassword:hover {
+    color: red;
+    cursor: pointer;
+  }
