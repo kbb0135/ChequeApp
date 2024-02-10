@@ -20,8 +20,11 @@ export default function DisplayUser() {
     const [userInfo, setUserInfo] = useState("")
     const [customerStatus, setCustomerStatus] = useState("")
     const [show, setShow] = useState(false);
+    const [showImage, setShowImage] = useState(false)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleImageClose = () => setShowImage(false);
+    const handleImageShow = () => setShowImage(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -52,7 +55,7 @@ export default function DisplayUser() {
             const docRef = await doc(db, currentUser.uid, phone);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-               
+
                 setUserInfo(docSnap.data());
             } else {
                 // docSnap.data() will be undefined in this case
@@ -72,17 +75,27 @@ export default function DisplayUser() {
             deleteObject(img)
                 .then(async () => {
                     await deleteDoc(doc(db, currentUser.uid, phone));
-                    toast.success("Database Deleted")
-                    await setTimeout(() => {
-                        navigate("/viewall")
-                    }, 2000)
 
+                    const cName = `${'c'}${phone}`;
+                    const checkImg = ref(storage, cName);
+                    deleteObject(checkImg)
+                        .then(async () => {
+                            toast.success("Record deleted successfully")
+                            await setTimeout(() => {
+                                navigate("/viewall")
+                            }, 2000)
+
+                        })
+                        .catch((error) => {
+                            toast.error("Error deleting", error);
+                        });
                 })
                 .catch((error) => {
                     toast.error("Error deleting", error);
                 });
 
         }
+
         else {
             navigate("/login")
         }
@@ -131,10 +144,34 @@ export default function DisplayUser() {
 
                 <DropdownButton id="dropdown-basic-button" title="Customer Options" variant="info">
                     <Dropdown.Item><Link to="/viewall" className="nav-link"> <p>Go back to Records</p></Link></Dropdown.Item>
+                    <Dropdown.Item><p className="delete-customer" onClick={handleImageShow}>Display Image</p></Dropdown.Item>
                     <Dropdown.Item><p className="delete-customer" onClick={async () => deleteUser()}>Delete this user</p></Dropdown.Item>
                     <Dropdown.Item><p className="delete-customer" onClick={handleShow}>Edit Customer Status</p></Dropdown.Item>
                 </DropdownButton>
             </div>
+
+            <Modal show={showImage} onHide={handleImageClose} animation={false}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Image</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {userInfo.chequeImage ? (
+                        <>
+                            <img src={userInfo.chequeImage} alt="image" className="viewImage"></img>
+                        </>
+                    ) : (
+                        <>
+                            <h4>No Image available. Please update the document again</h4>
+                        </>
+                    )}
+
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleImageClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
             <Modal show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>

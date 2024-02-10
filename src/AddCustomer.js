@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 // import {useNavigate } from 'react-router-dom';
 import { auth, db, storage } from './firebase'
@@ -20,6 +20,7 @@ export default function AddCustomer() {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [image, setImage] = useState("")
+    const [chequeImage, setChequeImage] = useState("")
     const [loginError, setLoginError] = useState("");
     const [currentUser, setCurrentUser] = useState("");
     const [isSpinner, setIsSpinner] = useState(false)
@@ -45,7 +46,7 @@ export default function AddCustomer() {
     const handleSubmit = async (e) => {
         if (currentUser && currentUser.uid) {
             e.preventDefault();
-            const emailPattern = /^[\w.-]+@(gmail\.com|hotmail\.com|yahoo\.com|outlook\.com)$/i;
+
 
             if (firstName === "") {
                 setLoginError("Please enter valid name");
@@ -71,68 +72,114 @@ export default function AddCustomer() {
                 setLoginError("Please upload image");
                 e.preventDefault()
             }
-            else if (image.name === "") {
+            
+            else if (chequeImage === "") {
                 setLoginError("Please upload image with valid name");
                 e.preventDefault()
             }
+            
             else {
                 if (currentUser.uid === null) {
                     alert("Cannot create customer")
                 }
                 else {
                     try {
-                        setIsSpinner(true)
-                        const storageRef = ref(storage, phone);
-                        const uploadTask = uploadBytesResumable(storageRef, image);
-                        uploadTask.on(
-                            "state_changed",
-                            (snapshot) => {
-                                // Observe state change events such as progress, pause, and resume
-                                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                                const progressState = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                                setProgress(progressState)
-                                switch (snapshot.state) {
-                                    case "paused":
-                                        toast.error("Upload is paused");
-                                        break;
-                                    case "running":
-                                        // toast.success("Upload is running");
-                                        break;
-                                    default:
-                                        toast.error("Something went wrong");
-                                }
-                            },
-                            (error) => {
-                                // Handle unsuccessful uploads
-                                toast.error(error.message);
-                            },
-                            () => {
-                                getDownloadURL(uploadTask.snapshot.ref).then(
-                                    async (downloadURL) => {
-                                        await setDoc(doc(db, currentUser.uid, phone), {
-                                            firstName: firstName,
-                                            lastName: lastName,
-                                            email: email,
-                                            phone: phone,
-                                            date: Timestamp.now(),
-                                            image: downloadURL,
-                                            status: "Good Standing"
-                                        });
-                                        setIsSpinner(false)
-                                        toast.success("Customer created")
-                                        setFirstName("")
-                                        setLastName("")
-                                        setEmail("")
-                                        setPhone("")
-                                        setImage("")
-                                        navigate("/viewall")
-                                    })
-                            })
 
+                        const cName = `${'c'}${phone}`;
+                        const docRef = doc(db, currentUser.uid, phone);
+                        const docSnap = await getDoc(docRef);
+                       
 
+                        if (!docSnap.exists()) {
+                            setIsSpinner(true)
+                            const storageRef = ref(storage, cName);
+
+                            const uploadTask = uploadBytesResumable(storageRef, chequeImage);
+                            uploadTask.on(
+                                "state_changed",
+                                (snapshot) => {
+                                    // Observe state change events such as progress, pause, and resume
+                                    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                                    const progressState = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                    setProgress(progressState)
+                                    switch (snapshot.state) {
+                                        case "paused":
+                                            toast.error("Upload is paused");
+                                            break;
+                                        case "running":
+                                            // toast.success("Upload is running");
+                                            break;
+                                        default:
+                                            toast.error("Something went wrong");
+                                    }
+                                },
+                                (error) => {
+                                    // Handle unsuccessful uploads
+                                    toast.error(error.message);
+                                },
+                                async () => {
+                                    getDownloadURL(uploadTask.snapshot.ref).then(
+                                        async (downloadURLCheck) => {
+                                            setIsSpinner(true)
+                                            const storageRef1 = ref(storage, phone);
+                                            const uploadTask1 = uploadBytesResumable(storageRef1, image);
+                                            uploadTask1.on(
+                                                "state_changed",
+                                                (snapshot) => {
+                                                    // Observe state change events such as progress, pause, and resume
+                                                    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                                                    const progressState = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                                    setProgress(progressState)
+                                                    switch (snapshot.state) {
+                                                        case "paused":
+                                                            toast.error("Upload is paused");
+                                                            break;
+                                                        case "running":
+                                                            // toast.success("Upload is running");
+                                                            break;
+                                                        default:
+                                                            toast.error("Something went wrong");
+                                                    }
+                                                },
+                                                (error) => {
+                                                    // Handle unsuccessful uploads
+                                                    toast.error(error.message);
+                                                },
+                                                () => {
+                                                
+                                                    getDownloadURL(uploadTask1.snapshot.ref).then(
+                                                        async (downloadURLID) => {
+                                                            await setDoc(doc(db, currentUser.uid, phone), {
+                                                                firstName: firstName,
+                                                                lastName: lastName,
+                                                                email: email,
+                                                                phone: phone,
+                                                                date: Timestamp.now(),
+                                                                image: downloadURLID,
+                                                                chequeImage: downloadURLCheck,
+                                                                status: "Good Standing"
+                                                            });
+                                                            setIsSpinner(false)
+                                                            toast.success("Customer created")
+                                                            setFirstName("")
+                                                            setLastName("")
+                                                            setEmail("")
+                                                            setPhone("")
+                                                            setImage("")
+                                                            navigate("/viewall")
+                                                        })
+                                                })
+                                        })
+                                })
+
+                        }
+                        else {
+                            e.preventDefault();
+                            toast.error("Customer with number "+phone +" already exist")
+                        }
 
                     } catch (e) {
-                       toast.error("Error adding document: ", e);
+                        toast.error("Error adding document: ", e);
                     }
                 }
 
@@ -180,7 +227,7 @@ export default function AddCustomer() {
                             placeholder="Enter Last Name"
                             required
                         />
-                        <label htmlFor="password">Email(Optional):</label>
+                        <label htmlFor="password">Address(Optional):</label>
                         <input
                             type="text"
                             id="text"
@@ -210,6 +257,19 @@ export default function AddCustomer() {
                                 setImage(e.target.files[0]);
                             }}
                         />
+                        <div className="chequeImage">
+                            <label htmlFor="password">Upload Cheque Picture:</label>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                capture="camera"
+                                onChange={(e) => {
+                                    // Handle image upload logic here
+                                    setChequeImage(e.target.files[0]);
+                                }}
+                            />
+                        </div>
+
                         <Button variant="info" onClick={(e) => handleSubmit(e)}>Submit</Button>
                         {
                             isSpinner ? (

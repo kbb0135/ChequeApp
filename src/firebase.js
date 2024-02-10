@@ -8,13 +8,12 @@ import {getStorage} from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-
+  apiKey: "AIzaSyDsBzSIc5CGjTPDPx7tY6kljWiT3zh1lfI",
+  authDomain: "chequeapp-2400e.firebaseapp.com",
+  projectId: "chequeapp-2400e",
+  storageBucket: "chequeapp-2400e.appspot.com",
+  messagingSenderId: "164780501323",
+  appId: "1:164780501323:web:9559f179d33e9d3ab9e0ce"
 };
 
 // Initialize Firebase

@@ -44,11 +44,13 @@ const ViewAllCustomer = () => {
                 querySnapshot.forEach(doc => {
                     userData.push(doc.data());
                 });
+                console.log(userData);
            // Check the data being fetched
                 setUserCollection(userData);
             } catch (error) {
                 toast.error("Error fetching user data:", error);
             }
+           
         }
         else {
             navigate("/")
