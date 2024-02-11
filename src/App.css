@@ -35,3 +35,6 @@
     transform: rotate(360deg);
   }
 }
+.bg-body-tertiary {
+  z-index: 1;
+}

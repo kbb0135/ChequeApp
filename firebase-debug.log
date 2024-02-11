@@ -1,0 +1,121 @@
+[debug] [2024-02-10T03:24:57.429Z] ----------------------------------------------------------------------
+[debug] [2024-02-10T03:24:57.432Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\budha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-02-10T03:24:57.432Z] CLI Version:   13.1.0
+[debug] [2024-02-10T03:24:57.432Z] Platform:      win32
+[debug] [2024-02-10T03:24:57.432Z] Node Version:  v20.11.0
+[debug] [2024-02-10T03:24:57.432Z] Time:          Fri Feb 09 2024 21:24:57 GMT-0600 (Central Standard Time)
+[debug] [2024-02-10T03:24:57.433Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-10T03:24:57.435Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-10T03:24:57.562Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-10T03:24:57.563Z] > authorizing via signed-in user (obedstore658@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2024-02-10T03:24:57.575Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-02-10T03:24:57.576Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-02-10T03:24:57.576Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project chequeapp-ea7f5. This may result in unexpected behavior. 
+[debug] [2024-02-10T03:24:57.589Z] [hub] writing locator at C:\Users\budha\AppData\Local\Temp\hub-chequeapp-ea7f5.json
+[debug] [2024-02-10T03:24:57.615Z] > refreshing access token with scopes: []
+[debug] [2024-02-10T03:24:57.616Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-10T03:24:57.617Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-10T03:24:57.697Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-02-10T03:24:57.698Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-02-10T03:24:57.830Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-02-10T03:24:57.831Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-10T03:24:57.847Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/chequeapp-ea7f5/sites 
+[debug] [2024-02-10T03:24:58.692Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/chequeapp-ea7f5/sites 200
+[debug] [2024-02-10T03:24:58.693Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/chequeapp-ea7f5/sites {"sites":[{"name":"projects/chequeapp-ea7f5/sites/chequeapp-ea7f5","defaultUrl":"https://chequeapp-ea7f5.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-02-10T03:24:58.693Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5/webApps/-/config [none]
+[debug] [2024-02-10T03:24:59.186Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5/webApps/-/config 200
+[debug] [2024-02-10T03:24:59.186Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5/webApps/-/config {"projectId":"chequeapp-ea7f5","appId":"1:413782922435:web:438408a9edcf5d33617e76","storageBucket":"chequeapp-ea7f5.appspot.com","locationId":"us-central","apiKey":"AIzaSyAtFE5-R73RlJI0FuLnAlo-ON9_7T5DSCQ","authDomain":"chequeapp-ea7f5.firebaseapp.com","messagingSenderId":"413782922435"}
+[debug] [2024-02-10T03:24:59.197Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5 [none]
+[debug] [2024-02-10T03:24:59.327Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5 200
+[debug] [2024-02-10T03:24:59.328Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5 {"projectId":"chequeapp-ea7f5","projectNumber":"413782922435","displayName":"ChequeApp","name":"projects/chequeapp-ea7f5","resources":{"hostingSite":"chequeapp-ea7f5","storageBucket":"chequeapp-ea7f5.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_810c217d-3532-4272-8b2d-523b88f25a3a"}
+[info] i  hosting[chequeapp-ea7f5]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[chequeapp-ea7f5]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ 127.0.0.1:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] "GET / HTTP/1.1" 200 633 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] \"GET / HTTP/1.1\" 200 633 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] "GET /static/css/main.84d6a0cf.css HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] \"GET /static/css/main.84d6a0cf.css HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] "GET /static/js/main.6d1f20db.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] \"GET /static/js/main.6d1f20db.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] "GET /manifest.json HTTP/1.1" 200 510 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] \"GET /manifest.json HTTP/1.1\" 200 510 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] "GET /software-engineer HTTP/1.1" 200 633 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] \"GET /software-engineer HTTP/1.1\" 200 633 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] "GET /cheque-logo.jpg HTTP/1.1" 200 2920598 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:07 +0000] \"GET /cheque-logo.jpg HTTP/1.1\" 200 2920598 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:15 +0000] "GET /static/media/search.fb437ee683c1d0e3a634f0cb5c9d5c0f.svg HTTP/1.1" 200 - "http://127.0.0.1:5000/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:15 +0000] \"GET /static/media/search.fb437ee683c1d0e3a634f0cb5c9d5c0f.svg HTTP/1.1\" 200 - \"http://127.0.0.1:5000/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [10/Feb/2024:03:25:20 +0000] "GET /static/media/notfound.5116beef491bb773f1f94c877c82e7b7.svg HTTP/1.1" 200 - "http://127.0.0.1:5000/viewall" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [10/Feb/2024:03:25:20 +0000] \"GET /static/media/notfound.5116beef491bb773f1f94c877c82e7b7.svg HTTP/1.1\" 200 - \"http://127.0.0.1:5000/viewall\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[debug] [2024-02-11T06:11:08.729Z] ----------------------------------------------------------------------
+[debug] [2024-02-11T06:11:08.731Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\budha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-02-11T06:11:08.732Z] CLI Version:   13.1.0
+[debug] [2024-02-11T06:11:08.732Z] Platform:      win32
+[debug] [2024-02-11T06:11:08.732Z] Node Version:  v20.11.0
+[debug] [2024-02-11T06:11:08.732Z] Time:          Sun Feb 11 2024 00:11:08 GMT-0600 (Central Standard Time)
+[debug] [2024-02-11T06:11:08.732Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-11T06:11:08.736Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-11T06:11:08.872Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-11T06:11:08.872Z] > authorizing via signed-in user (obedstore658@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2024-02-11T06:11:08.885Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-02-11T06:11:08.885Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-02-11T06:11:08.885Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project chequeapp-ea7f5. This may result in unexpected behavior. 
+[debug] [2024-02-11T06:11:08.900Z] [hub] writing locator at C:\Users\budha\AppData\Local\Temp\hub-chequeapp-ea7f5.json
+[debug] [2024-02-11T06:11:08.928Z] > refreshing access token with scopes: []
+[debug] [2024-02-11T06:11:08.929Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-11T06:11:08.929Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-11T06:11:09.337Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-02-11T06:11:09.337Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-02-11T06:11:09.385Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-02-11T06:11:09.386Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-11T06:11:09.401Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/chequeapp-ea7f5/sites 
+[debug] [2024-02-11T06:11:09.791Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/chequeapp-ea7f5/sites 200
+[debug] [2024-02-11T06:11:09.791Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/chequeapp-ea7f5/sites {"sites":[{"name":"projects/chequeapp-ea7f5/sites/chequeapp-ea7f5","defaultUrl":"https://chequeapp-ea7f5.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-02-11T06:11:09.792Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5/webApps/-/config [none]
+[debug] [2024-02-11T06:11:10.345Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5/webApps/-/config 200
+[debug] [2024-02-11T06:11:10.345Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5/webApps/-/config {"projectId":"chequeapp-ea7f5","appId":"1:413782922435:web:438408a9edcf5d33617e76","storageBucket":"chequeapp-ea7f5.appspot.com","locationId":"us-central","apiKey":"AIzaSyAtFE5-R73RlJI0FuLnAlo-ON9_7T5DSCQ","authDomain":"chequeapp-ea7f5.firebaseapp.com","messagingSenderId":"413782922435"}
+[debug] [2024-02-11T06:11:10.355Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5 [none]
+[debug] [2024-02-11T06:11:10.513Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5 200
+[debug] [2024-02-11T06:11:10.513Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chequeapp-ea7f5 {"projectId":"chequeapp-ea7f5","projectNumber":"413782922435","displayName":"ChequeApp","name":"projects/chequeapp-ea7f5","resources":{"hostingSite":"chequeapp-ea7f5","storageBucket":"chequeapp-ea7f5.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_810c217d-3532-4272-8b2d-523b88f25a3a"}
+[info] i  hosting[chequeapp-ea7f5]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[chequeapp-ea7f5]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ 127.0.0.1:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:36 +0000] "GET / HTTP/1.1" 200 633 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:36 +0000] \"GET / HTTP/1.1\" 200 633 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:36 +0000] "GET /static/css/main.d310841e.css HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:36 +0000] \"GET /static/css/main.d310841e.css HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] "GET /static/js/main.77e565ed.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] \"GET /static/js/main.77e565ed.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] "GET /manifest.json HTTP/1.1" 200 510 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] \"GET /manifest.json HTTP/1.1\" 200 510 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] "GET /software-engineer HTTP/1.1" 200 633 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] \"GET /software-engineer HTTP/1.1\" 200 633 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] "GET /cheque-logo.jpg HTTP/1.1" 200 2920598 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:37 +0000] \"GET /cheque-logo.jpg HTTP/1.1\" 200 2920598 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:45 +0000] "GET /static/media/search.fb437ee683c1d0e3a634f0cb5c9d5c0f.svg HTTP/1.1" 200 - "http://127.0.0.1:5000/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:45 +0000] \"GET /static/media/search.fb437ee683c1d0e3a634f0cb5c9d5c0f.svg HTTP/1.1\" 200 - \"http://127.0.0.1:5000/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:11:52 +0000] "GET /static/media/notfound.5116beef491bb773f1f94c877c82e7b7.svg HTTP/1.1" 200 - "http://127.0.0.1:5000/viewall" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:11:52 +0000] \"GET /static/media/notfound.5116beef491bb773f1f94c877c82e7b7.svg HTTP/1.1\" 200 - \"http://127.0.0.1:5000/viewall\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:12:07 +0000] "GET /static/media/notfound.5116beef491bb773f1f94c877c82e7b7.svg HTTP/1.1" 200 - "http://127.0.0.1:5000/viewall" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:12:07 +0000] \"GET /static/media/notfound.5116beef491bb773f1f94c877c82e7b7.svg HTTP/1.1\" 200 - \"http://127.0.0.1:5000/viewall\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [11/Feb/2024:06:12:10 +0000] "GET /static/media/search.fb437ee683c1d0e3a634f0cb5c9d5c0f.svg HTTP/1.1" 200 - "http://127.0.0.1:5000/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [11/Feb/2024:06:12:10 +0000] \"GET /static/media/search.fb437ee683c1d0e3a634f0cb5c9d5c0f.svg HTTP/1.1\" 200 - \"http://127.0.0.1:5000/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0\""}}
+[debug] [2024-02-11T06:15:57.830Z] Received signal SIGHUP 1

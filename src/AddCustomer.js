@@ -20,6 +20,7 @@ export default function AddCustomer() {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [image, setImage] = useState("")
+    const [companyName, setCompanyName] = useState("")
     const [chequeImage, setChequeImage] = useState("")
     const [loginError, setLoginError] = useState("");
     const [currentUser, setCurrentUser] = useState("");
@@ -56,6 +57,10 @@ export default function AddCustomer() {
                 setLoginError("Please enter valid lastName");
                 e.preventDefault()
             }
+            else if (companyName === "") {
+                setLoginError("Please enter valid company Name");
+                e.preventDefault()
+            }
             // else if (email === "") {
             //     setLoginError("Please enter valid email");
             //     e.preventDefault()
@@ -64,20 +69,20 @@ export default function AddCustomer() {
             //     setLoginError("Please enter valid email");
             //     e.preventDefault();
             // }
-            else if (phone.length != 10) {
+            else if (phone.length !== 10) {
                 setLoginError("Please enter valid phoneNumber");
                 e.preventDefault()
             }
             else if (image === "") {
-                setLoginError("Please upload image");
+                setLoginError("Please upload 1st image");
                 e.preventDefault()
             }
-            
+
             else if (chequeImage === "") {
-                setLoginError("Please upload image with valid name");
+                setLoginError("Please upload 2nd image");
                 e.preventDefault()
             }
-            
+
             else {
                 if (currentUser.uid === null) {
                     alert("Cannot create customer")
@@ -88,7 +93,7 @@ export default function AddCustomer() {
                         const cName = `${'c'}${phone}`;
                         const docRef = doc(db, currentUser.uid, phone);
                         const docSnap = await getDoc(docRef);
-                       
+
 
                         if (!docSnap.exists()) {
                             setIsSpinner(true)
@@ -146,13 +151,14 @@ export default function AddCustomer() {
                                                     toast.error(error.message);
                                                 },
                                                 () => {
-                                                
+
                                                     getDownloadURL(uploadTask1.snapshot.ref).then(
                                                         async (downloadURLID) => {
                                                             await setDoc(doc(db, currentUser.uid, phone), {
                                                                 firstName: firstName,
                                                                 lastName: lastName,
                                                                 email: email,
+                                                                companyName: companyName,
                                                                 phone: phone,
                                                                 date: Timestamp.now(),
                                                                 image: downloadURLID,
@@ -175,7 +181,7 @@ export default function AddCustomer() {
                         }
                         else {
                             e.preventDefault();
-                            toast.error("Customer with number "+phone +" already exist")
+                            toast.error("Customer with number " + phone + " already exist")
                         }
 
                     } catch (e) {
@@ -234,9 +240,21 @@ export default function AddCustomer() {
                             className="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter Email"
+                            placeholder="Enter Address"
                             required
                         />
+
+                        <label htmlFor="password">Company Name:</label>
+                        <input
+                            type="text"
+                            id="text"
+                            className="email"
+                            value={companyName}
+                            onChange={(e) => setCompanyName(e.target.value)}
+                            placeholder="Company Name"
+                            required
+                        />
+
                         <label htmlFor="password">Phone Number:</label>
                         <input
                             type="text"

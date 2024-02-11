@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Badge from 'react-bootstrap/Badge';
 
 const UserContainer = ({ item }) => {
-    const [addImage, setNewImage] = useState("")
     return (
         <div classNmae="main-container">
             <div className="menu-card">

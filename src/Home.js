@@ -125,7 +125,7 @@ export default function Home() {
                     
                 } else {
                     // docSnap.data() will be undefined in this case
-                    toast.error("No such document!");
+            
                     setIsSpinner(false)
                     setIsStatus(false)
                     setIsNotUser(true)

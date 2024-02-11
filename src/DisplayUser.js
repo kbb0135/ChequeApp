@@ -138,6 +138,7 @@ export default function DisplayUser() {
                             phone={userInfo.phone}
                             imageUrl={userInfo.image}
                             status={userInfo.status}
+                            companyName={userInfo.companyName}
                         />
                     </div>
                 </div>
